@@ -17,7 +17,7 @@ class Date:
             else:
                 order = order + 31
         order = order + self.day
-        return(order)
+        return order
 
     def __str__(self):
         return str(self.day) + "/" + str(self.month) + "/" + str(self.year)
@@ -63,19 +63,21 @@ class Date:
     def __ne__(self, other):
         return self.order() != other
 
+
 d, m, y = input("Enter a date :   ").split(",")
 d1 = Date(int(d), int(m), int(y))
 print(d1)
 
 print("The order of the day in the year is: ", d1.order(), "th")
-added_days = int(input("Enter number of days to add:"))
+added_days = int(input("Enter number of days to add:    "))
 d2 = d1 + added_days
 print(d2)
+print(d1)
 
-compare_tonumber=int(input("Enter anumber to campare:    "))
-print ("is", d1, "<", compare_tonumber,d1 < compare_tonumber )
+compare_to_number = int(input("Enter a number to compare:    "))
+print("is d1 ", "<", compare_to_number, d1 < compare_to_number)
 
-d_sub, m_sub, y_sub = input("Enter a date :   ").split(",")
-d4 = Date(int(d_sub), int(m_sub), int(y_sub))
-d3 = d1 - d4
-print(d3)
+#d_sub, m_sub, y_sub = input("Enter a date :   ").split(",")
+#d4 = Date(int(d_sub), int(m_sub), int(y_sub))
+#d3 = d1 - d4
+#print(d3)

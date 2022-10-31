@@ -58,7 +58,7 @@ class Date:
         day = self.day + other
         month = self.month
         year = self.year
-        mod_date = Date(day, month, year)
+        mod_date = Date(day, month, year)   # mod_date means modified date
 
         while mod_date.day > 28:
             if mod_date.month in self.months_28days:
@@ -79,10 +79,7 @@ class Date:
         return mod_date
 
     def __sub__(self, other):
-        x = abs(self.order() - other.order())
-        n = abs(self.year() - other.year())
-        z = x + n
-        return x
+        return abs(self.order() - other.order()) + abs(self.year - other.year) * 365
 
     def __lt__(self, other):
         return self.order() < other
@@ -113,7 +110,7 @@ d2 = d1 + added_days
 print("The date after", added_days, "is: ", d2)
 
 compare_to_number = int(input("Enter a number to compare:    "))
-print("is d1 proceed number ", compare_to_number, d1 < compare_to_number)
+print("Is d1 proceed number ", compare_to_number, d1 < compare_to_number)
 
 print("Enter two date to calculate the difference between it:")
 d_sub, m_sub, y_sub = input("Enter the first date :   ").split(",")
